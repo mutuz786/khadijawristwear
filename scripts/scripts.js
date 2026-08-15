@@ -3,7 +3,12 @@ const productsData = {
   "products": {
     "bracelets": [
       { "id": "1", "name": "Blue Star Bracelet", "image": "images/brac1.jpg", "price": "12.00" },
-      { "id": "2", "name": "Red Star Bracelet", "image": "images/brac2.jpg", "price": "12.00" }
+      { "id": "2", "name": "Red Star Bracelet", "image": "images/brac2.jpg", "price": "12.00" },
+      { "id": "3", "name": "Yellow Star Bracelet", "image": "images/brac2.jpg", "price": "12.00" },
+      { "id": "4", "name": "Green Star Bracelet", "image": "images/brac2.jpg", "price": "12.00" },
+      { "id": "5", "name": "Pink Star Bracelet", "image": "images/brac2.jpg", "price": "12.00" },
+      { "id": "6", "name": "Violet Star Bracelet", "image": "images/brac2.jpg", "price": "12.00" },
+      { "id": "7", "name": "Brown Star Bracelet", "image": "images/brac2.jpg", "price": "12.00" },
     ],
     "combos": [
       { "id": "1", "name": "Blue Combo Pack", "image": "images/combo1.jpg", "price": "24.00" },
