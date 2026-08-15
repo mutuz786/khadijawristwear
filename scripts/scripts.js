@@ -38,6 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCategory("keychains", "Keychains");
 });
 
+// Auto-close mobile navigation menu after clicking a link
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
+      bsCollapse.hide();
+    }
+  });
+});
+
 function renderCategory(categoryId, categoryTitle) {
   const container = document.getElementById(`${categoryId}-container`);
   if (!container) return;
