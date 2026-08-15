@@ -56,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCategory("keychains", "Keychains");
 });
 
-// Auto-close mobile navigation menu after clicking a link
 document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
   link.addEventListener('click', () => {
     const navbarCollapse = document.getElementById('navbarNav');
