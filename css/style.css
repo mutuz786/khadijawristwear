@@ -1,623 +1,137 @@
-/* ===========================================================
-   Khadija Wristwear
-   Luxury Boutique Theme
-=========================================================== */
-
-/* Google Font (Optional if you want to download locally later) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-:root{
-
-    --primary:#d63384;
-    --primary-dark:#b0256a;
-    --secondary:#f8d7e8;
-    --accent:#ffd6e7;
-    --gold:#d4af37;
-    --text:#343a40;
-    --light:#fff7fb;
-    --white:#ffffff;
-    --shadow:0 10px 30px rgba(0,0,0,.10);
-    --radius:18px;
-
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-
-    font-family:'Poppins',sans-serif;
-    background:#fff;
-    color:var(--text);
-    overflow-x:hidden;
-
-}
-
-/* ==========================
-        NAVBAR
-========================== */
-
-.navbar{
-
-    padding:15px 0;
-    transition:.35s;
-
-}
-
-.navbar.scrolled{
-
-    background:white !important;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-}
-
-.logo{
-
-    font-size:30px;
-    font-weight:700;
-    color:var(--primary) !important;
-
-}
-
-.logo span{
-
-    color:var(--gold);
-
-}
-
-.nav-link{
-
-    margin-left:15px;
-    font-weight:500;
-    color:#555 !important;
-    transition:.3s;
-
-}
-
-.nav-link:hover{
-
-    color:var(--primary)!important;
-
-}
-
-/* ==========================
-        BUTTONS
-========================== */
-
-.btn-pink{
-
-    background:linear-gradient(135deg,var(--primary),#ff5ea8);
-    color:white;
-    border:none;
-    border-radius:50px;
-    padding:12px 28px;
-    transition:.3s;
-
-}
-
-.btn-pink:hover{
-
-    color:white;
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(214,51,132,.4);
-
-}
-
-.btn-outline-dark{
-
-    border-radius:50px;
-    padding:12px 28px;
-
-}
-
-/* ==========================
-        HERO
-========================== */
-
-.hero{
-
-    padding-top:140px;
-    padding-bottom:100px;
-    background:linear-gradient(
-        120deg,
-        #fff,
-        #fff6fb,
-        #ffeef6
-    );
-
-}
-
-.hero-tag{
-
-    background:#ffe4ef;
-    color:var(--primary);
-    padding:10px 18px;
-    border-radius:30px;
-    display:inline-block;
-    font-weight:600;
-
-}
-
-.hero h1{
-
-    color:#222;
-    line-height:1.15;
-
-}
-
-.hero p{
-
-    color:#666;
-
-}
-
-.hero-image{
-
-    border-radius:25px;
-    transition:.5s;
-    box-shadow:var(--shadow);
-
-}
-
-.hero-image:hover{
-
-    transform:scale(1.03);
-
-}
-
-/* ==========================
-      SECTION TITLES
-========================== */
-
-section h2{
-
-    color:#222;
-    margin-bottom:15px;
-
-}
-
-section{
-
-    padding-top:70px;
-    padding-bottom:70px;
-
-}
-
-/* ==========================
-      FEATURE BOXES
-========================== */
-
-.bg-light{
-
-    background:#fff7fb !important;
-
-}
-
-.bg-light h3{
-
-    font-size:45px;
-
-}
-
-.bg-light p{
-
-    color:#777;
-
-}
-
-/* ==========================
-      PRODUCT CARDS
-========================== */
-
-.product-card{
-
-    overflow:hidden;
-    border-radius:20px;
-    transition:.35s;
-    cursor:pointer;
-
-}
-
-.product-card img{
-
-    height:300px;
-    object-fit:cover;
-    transition:.5s;
-
-}
-
-.product-card:hover{
-
-    transform:translateY(-12px);
-    box-shadow:0 20px 40px rgba(0,0,0,.15);
-
-}
-
-.product-card:hover img{
-
-    transform:scale(1.08);
-
-}
-
-.product-card .card-body{
-
-    padding:25px;
-
-}
-
-.product-card h5{
-
-    font-weight:600;
-
-}
-
-.text-pink{
-
-    color:var(--primary);
-
-}
-
-/* ==========================
-      BADGES
-========================== */
-
-.badge{
-
-    border-radius:20px;
-    padding:8px 14px;
-    font-weight:500;
-
-}
-
-/* ==========================
-      ABOUT
-========================== */
-
-#about img{
-
-    border-radius:20px;
-
-}
-
-#about p{
-
-    color:#666;
-    line-height:1.8;
-
-}
-
-/* ==========================
-     TESTIMONIALS
-========================== */
-
-.card{
-
-    border-radius:20px;
-
-}
-
-.card:hover{
-
-    transform:translateY(-8px);
-    transition:.35s;
-
-}
-
-/* ==========================
-      NEWSLETTER
-========================== */
-
-.newsletter{
-
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        #ff7ab8
-    );
-
-    color:white;
-
-}
-
-.newsletter h2{
-
-    color:white;
-
-}
-
-.newsletter .form-control{
-
-    height:58px;
-    border:none;
-    border-radius:50px 0 0 50px;
-    padding-left:25px;
-
-}
-
-.newsletter .btn{
-
-    border-radius:0 50px 50px 0;
-
-}
-
-/* ==========================
-      CONTACT
-========================== */
-
-form .form-control{
-
-    border-radius:12px;
-    padding:15px;
-    border:1px solid #ddd;
-
-}
-
-form .form-control:focus{
-
-    border-color:var(--primary);
-    box-shadow:none;
-
-}
-
-/* ==========================
-      FOOTER
-========================== */
-
-footer{
-
-    background:#1d1d1d;
-
-}
-
-footer h4{
-
-    color:white;
-
-}
-
-footer p{
-
-    color:#ddd;
-
-}
-
-/* ==========================
-      WHATSAPP BUTTON
-========================== */
-
-.whatsapp-btn{
-
-    position:fixed;
-
-    bottom:25px;
-    left:25px;
-
-    width:60px;
-    height:60px;
-
-    background:#25D366;
-
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:white;
-    text-decoration:none;
-
-    font-size:30px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.25);
-
-    z-index:999;
-
-    transition:.35s;
-
-}
-
-.whatsapp-btn:hover{
-
-    color:white;
-
-    transform:scale(1.1);
-
-}
-
-/* ==========================
-      TOP BUTTON
-========================== */
-
-#topBtn{
-
-    position:fixed;
-
-    right:25px;
-    bottom:25px;
-
-    width:55px;
-    height:55px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:var(--primary);
-
-    color:white;
-
-    font-size:22px;
-
-    display:none;
-
-    z-index:999;
-
-    transition:.35s;
-
-}
-
-#topBtn:hover{
-
-    transform:translateY(-5px);
-
-}
-
-/* ==========================
-      IMAGE GALLERY
-========================== */
-
-img{
-
-    max-width:100%;
-
-}
-
-img:hover{
-
-    transition:.35s;
-
-}
-
-/* ==========================
-      ANIMATIONS
-========================== */
-
-.fade-up{
-
-    opacity:0;
-    transform:translateY(50px);
-
-}
-
-.fade-up.show{
-
-    opacity:1;
-    transform:translateY(0);
-
-    transition:all .8s ease;
-
-}
-
-/* ==========================
-      RESPONSIVE
-========================== */
-
-@media(max-width:991px){
-
-.hero{
-
-    text-align:center;
-
+:root {
+  --primary-pink: #f8c8dc;
+  --soft-rose: #e899b0;
+  --accent-gold: #d4af37;
+  --text-dark: #4a4a4a;
+  --bg-light: #fffafb;
 }
 
-.hero-image{
-
-    margin-top:50px;
-
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
 }
 
-.nav-link{
-
-    margin:10px 0;
-
+/* Brand Navbar */
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--soft-rose) !important;
 }
 
+.nav-link {
+  font-weight: 500;
+  color: var(--text-dark) !important;
+  margin: 0 5px;
+  transition: color 0.3s ease;
 }
-
-@media(max-width:768px){
 
-.hero{
-
-    padding-top:120px;
-
+.nav-link:hover, .nav-link.active {
+  color: var(--soft-rose) !important;
 }
-
-.hero h1{
-
-    font-size:40px;
 
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #fdeef4 0%, #f8c8dc 100%);
+  border-radius: 20px;
+  padding: 60px 20px;
 }
 
-.logo{
-
-    font-size:24px;
-
+/* Section Titles */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  color: var(--text-dark);
 }
 
-.product-card img{
-
-    height:240px;
-
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 3px;
+  background: var(--soft-rose);
+  margin: 8px auto 0;
+  border-radius: 2px;
 }
-
-.newsletter .input-group{
 
-    display:block;
-
+/* Product Cards */
+.product-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff;
 }
-
-.newsletter .form-control{
 
-    border-radius:50px;
-    margin-bottom:15px;
-
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(232, 153, 176, 0.2) !important;
 }
-
-.newsletter .btn{
 
-    width:100%;
-    border-radius:50px;
-
+.product-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  background-color: #f9f9f9;
 }
 
+.product-img-wrapper img {
+  height: 220px;
+  object-fit: cover;
 }
-
-@media(max-width:576px){
 
-.hero h1{
-
-    font-size:34px;
-
+.btn-wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  color: var(--soft-rose);
+  font-size: 1.2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
 }
-
-.hero p{
 
-    font-size:15px;
-
+.btn-wishlist:hover {
+  background: #ffffff;
+  color: #d86b8c;
 }
-
-.btn-pink{
 
-    width:100%;
-    margin-bottom:15px;
-
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
 }
-
-.btn-outline-dark{
 
-    width:100%;
-
+.price-tag {
+  font-weight: 700;
+  color: var(--soft-rose);
+  font-size: 1.1rem;
 }
-
-.whatsapp-btn{
 
-    width:55px;
-    height:55px;
-
+.btn-girly {
+  background-color: var(--soft-rose);
+  color: #ffffff;
+  border-radius: 25px;
+  font-weight: 500;
+  border: none;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease;
 }
-
-#topBtn{
-
-    width:50px;
-    height:50px;
 
+.btn-girly:hover {
+  background-color: #d86b8c;
+  color: #ffffff;
 }
 
+/* Footer */
+footer {
+  background-color: #fdeef4;
+  color: var(--text-dark);
 }
