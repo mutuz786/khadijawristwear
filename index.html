@@ -1,740 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Khadija Wristwear</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khadija Wristwear | Elegant Accessories</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<!-- ===================== NAVBAR ===================== -->
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
     <div class="container">
-
-        <a class="navbar-brand fw-bold logo" href="#">
-            Khadija <span>Wristwear</span>
-        </a>
-
-        <button class="navbar-toggler"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarMenu">
-
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarMenu">
-
-            <ul class="navbar-nav ms-auto align-items-lg-center">
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="#home">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#collection">Collections</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#new">New Arrivals</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-
-                <li class="nav-item ms-lg-3">
-
-                    <button class="btn btn-pink">
-                        Shop Now
-                    </button>
-
-                </li>
-
-            </ul>
-
-        </div>
-
+      <a class="navbar-brand" href="#">Khadija Wristwear ✨</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="#bracelets">Bracelets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#combos">Combos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#charms">Phone Charms</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tasbeeh">Tasbeeh</a></li>
+          <li class="nav-item"><a class="nav-link" href="#keychains">Keychains</a></li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
 
-<!-- ===================== HERO ===================== -->
+  <!-- Hero Banner -->
+  <header class="container my-4">
+    <div class="hero-section text-center">
+      <h1 class="display-5 font-weight-bold mb-3" style="font-family: 'Playfair Display', serif;">Charming Handcrafted Accessories</h1>
+      <p class="lead text-muted mb-4">Discover bespoke bracelets, phone charms, and custom tasbeeh designed for everyday elegance.</p>
+      <a href="#bracelets" class="btn btn-girly px-4 py-2">Explore Collection</a>
+    </div>
+  </header>
 
-<section id="home" class="hero">
+  <!-- Main Product Showcase -->
+  <main class="container py-4">
+    
+    <!-- 1. Bracelets -->
+    <section id="bracelets" class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Bracelets</h2>
+      </div>
+      <div class="row g-4" id="bracelets-container"></div>
+    </section>
 
+    <!-- 2. Combos -->
+    <section id="combos" class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Combos</h2>
+      </div>
+      <div class="row g-4" id="combos-container"></div>
+    </section>
+
+    <!-- 3. Phone Charms -->
+    <section id="charms" class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Phone Charms</h2>
+      </div>
+      <div class="row g-4" id="charms-container"></div>
+    </section>
+
+    <!-- 4. Tasbeeh -->
+    <section id="tasbeeh" class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Tasbeeh</h2>
+      </div>
+      <div class="row g-4" id="tasbeeh-container"></div>
+    </section>
+
+    <!-- 5. Keychains -->
+    <section id="keychains" class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Keychains</h2>
+      </div>
+      <div class="row g-4" id="keychains-container"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4 text-center border-top mt-5">
     <div class="container">
-
-        <div class="row align-items-center">
-
-            <div class="col-lg-6">
-
-                <span class="hero-tag">
-                    ✨ Luxury Wristwear Collection
-                </span>
-
-                <h1 class="display-3 fw-bold mt-3">
-
-                    Elegance
-                    <br>
-                    On Your Wrist
-
-                </h1>
-
-                <p class="lead mt-4">
-
-                    Discover beautiful bracelets, watches,
-                    bangles and accessories crafted to make
-                    every outfit shine.
-
-                </p>
-
-                <div class="mt-5">
-
-                    <a href="#collection" class="btn btn-pink btn-lg me-3">
-                        Shop Collection
-                    </a>
-
-                    <a href="#about" class="btn btn-outline-dark btn-lg">
-                        Learn More
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-6 text-center">
-
-                <img src="images/image1.jpg"
-                     class="img-fluid hero-image rounded-4 shadow-lg"
-                     alt="Hero">
-
-            </div>
-
-        </div>
-
+      <p class="mb-1">&copy; 2026 Khadija Wristwear. Crafted with love 💖</p>
+      <small class="text-muted">Handmade Accessories & Gift Sets</small>
     </div>
-
-</section>
-
-<!-- ===================== FEATURES ===================== -->
-
-<section class="py-5 bg-light">
-
-<div class="container">
-
-<div class="row text-center">
-
-<div class="col-md-3">
-
-<h3>💎</h3>
-
-<h5>Premium Quality</h5>
-
-<p>Carefully selected wristwear.</p>
-
-</div>
-
-<div class="col-md-3">
-
-<h3>🚚</h3>
-
-<h5>Fast Delivery</h5>
-
-<p>Quick shipping across India.</p>
-
-</div>
-
-<div class="col-md-3">
-
-<h3>🎁</h3>
-
-<h5>Perfect Gifts</h5>
-
-<p>Beautiful gift-worthy collections.</p>
-
-</div>
-
-<div class="col-md-3">
-
-<h3>❤️</h3>
-
-<h5>Trusted Store</h5>
-
-<p>Hundreds of happy customers.</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================== COLLECTION ===================== -->
-
-<section id="collection" class="py-5">
-
-<div class="container">
-
-<div class="text-center mb-5">
-
-<h2 class="fw-bold">
-
-Featured Collection
-
-</h2>
-
-<p class="text-muted">
-
-Our best selling wristwear.
-
-</p>
-
-</div>
-
-<div class="row g-4">
-
-<!-- CARD -->
-
-<div class="col-lg-3 col-md-6">
-
-<div class="card product-card border-0 shadow">
-
-<img src="images/image1.jpg"
-class="card-img-top"
-alt="">
-
-<div class="card-body">
-
-<span class="badge bg-danger">
-New
-</span>
-
-<h5 class="mt-3">
-Rose Bracelet
-</h5>
-
-<p class="text-muted">
-
-Elegant handcrafted bracelet.
-
-</p>
-
-<div class="d-flex justify-content-between">
-
-<h5 class="text-pink">
-₹799
-</h5>
-
-<button class="btn btn-pink btn-sm">
-View
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- CARD -->
-
-<div class="col-lg-3 col-md-6">
-
-<div class="card product-card border-0 shadow">
-
-<img src="images/image2.jpg"
-class="card-img-top">
-
-<div class="card-body">
-
-<span class="badge bg-success">
-
-Best Seller
-
-</span>
-
-<h5 class="mt-3">
-
-Pearl Bracelet
-
-</h5>
-
-<p class="text-muted">
-
-Luxury pearl design.
-
-</p>
-
-<div class="d-flex justify-content-between">
-
-<h5 class="text-pink">
-₹999
-</h5>
-
-<button class="btn btn-pink btn-sm">
-View
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- CARD -->
-
-<div class="col-lg-3 col-md-6">
-
-<div class="card product-card border-0 shadow">
-
-<img src="images/image3.jpg"
-class="card-img-top">
-
-<div class="card-body">
-
-<span class="badge bg-warning text-dark">
-
-Trending
-
-</span>
-
-<h5 class="mt-3">
-
-Luxury Watch
-
-</h5>
-
-<p class="text-muted">
-
-Minimal elegant style.
-
-</p>
-
-<div class="d-flex justify-content-between">
-
-<h5 class="text-pink">
-₹1599
-</h5>
-
-<button class="btn btn-pink btn-sm">
-View
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- CARD -->
-
-<div class="col-lg-3 col-md-6">
-
-<div class="card product-card border-0 shadow">
-
-<img src="images/image4.jpg"
-class="card-img-top">
-
-<div class="card-body">
-
-<span class="badge bg-primary">
-
-Exclusive
-
-</span>
-
-<h5 class="mt-3">
-
-Couple Set
-
-</h5>
-
-<p class="text-muted">
-
-Perfect matching pair.
-
-</p>
-
-<div class="d-flex justify-content-between">
-
-<h5 class="text-pink">
-₹1899
-</h5>
-
-<button class="btn btn-pink btn-sm">
-View
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================== NEW ARRIVALS ===================== -->
-
-<section id="new" class="py-5 bg-light">
-
-<div class="container">
-
-<div class="text-center mb-5">
-
-<h2 class="fw-bold">
-
-New Arrivals
-
-</h2>
-
-</div>
-
-<div class="row">
-
-<div class="col-md-4 mb-4">
-
-<img src="images/image3.jpg"
-class="img-fluid rounded shadow">
-
-</div>
-
-<div class="col-md-4 mb-4">
-
-<img src="images/image4.jpg"
-class="img-fluid rounded shadow">
-
-</div>
-
-<div class="col-md-4 mb-4">
-
-<img src="images/image5.jpg"
-class="img-fluid rounded shadow">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================== ABOUT ===================== -->
-
-<section id="about" class="py-5">
-
-<div class="container">
-
-<div class="row align-items-center">
-
-<div class="col-lg-6">
-
-<img src="images/image2.jpg"
-class="img-fluid rounded-4 shadow">
-
-</div>
-
-<div class="col-lg-6">
-
-<h2 class="fw-bold">
-
-About Khadija Wristwear
-
-</h2>
-
-<p>
-
-At Khadija Wristwear, every bracelet, watch,
-and accessory is chosen with elegance in mind.
-Our mission is to provide fashionable wristwear
-that complements every occasion, from everyday
-wear to special celebrations.
-
-</p>
-
-<a class="btn btn-pink">
-
-Explore More
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================== TESTIMONIALS ===================== -->
-
-<section class="py-5 bg-light">
-
-<div class="container">
-
-<h2 class="text-center fw-bold mb-5">
-
-Happy Customers
-
-</h2>
-
-<div class="row">
-
-<div class="col-md-4">
-
-<div class="card border-0 shadow p-4">
-
-★★★★★
-
-<p class="mt-3">
-
-Absolutely loved the bracelet.
-Excellent quality.
-
-</p>
-
-<b>- Sarah</b>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card border-0 shadow p-4">
-
-★★★★★
-
-<p class="mt-3">
-
-Beautiful packaging and fast delivery.
-
-</p>
-
-<b>- Fatima</b>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card border-0 shadow p-4">
-
-★★★★★
-
-<p class="mt-3">
-
-Looks much more expensive than it costs.
-
-</p>
-
-<b>- Ayesha</b>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================== NEWSLETTER ===================== -->
-
-<section class="newsletter">
-
-<div class="container text-center">
-
-<h2>
-
-Stay Updated
-
-</h2>
-
-<p>
-
-Subscribe for exclusive offers.
-
-</p>
-
-<div class="row justify-content-center">
-
-<div class="col-lg-6">
-
-<div class="input-group">
-
-<input type="email"
-class="form-control"
-placeholder="Enter your email">
-
-<button class="btn btn-pink">
-
-Subscribe
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================== CONTACT ===================== -->
-
-<section id="contact" class="py-5">
-
-<div class="container">
-
-<div class="row">
-
-<div class="col-lg-6">
-
-<h2>
-
-Contact Us
-
-</h2>
-
-<p>
-
-📍 Your City
-
-</p>
-
-<p>
-
-📞 +91 XXXXX XXXXX
-
-</p>
-
-<p>
-
-✉️ info@khadijawristwear.com
-
-</p>
-
-</div>
-
-<div class="col-lg-6">
-
-<form>
-
-<input class="form-control mb-3"
-placeholder="Name">
-
-<input class="form-control mb-3"
-placeholder="Email">
-
-<textarea
-class="form-control mb-3"
-rows="5"
-placeholder="Message"></textarea>
-
-<button class="btn btn-pink">
-
-Send Message
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===================== FOOTER ===================== -->
-
-<footer class="bg-dark text-white py-4">
-
-<div class="container text-center">
-
-<h4>
-
-Khadija Wristwear
-
-</h4>
-
-<p>
-
-Luxury • Elegance • Style
-
-</p>
-
-<p>
-
-© 2026 Khadija Wristwear.
-All Rights Reserved.
-
-</p>
-
-</div>
-
-</footer>
-
-<!-- WhatsApp -->
-
-<a href="#"
-class="whatsapp-btn">
-
-<i class="bi bi-whatsapp"></i>
-
-</a>
-
-<!-- Back To Top -->
-
-<button id="topBtn">
-
-↑
-
-</button>
-
-<!-- Bootstrap JS -->
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Custom JS -->
-<script src="scripts/scripts.js"></script>
-
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom Script -->
+  <script src="scripts/script.js"></script>
 </body>
 </html>
