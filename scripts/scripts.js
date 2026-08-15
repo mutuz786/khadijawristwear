@@ -172,20 +172,39 @@ const productsData = {
       {"id": "17","name": "Combo 17","image": "images/combo17.jpg","price": "300.00"},
       {"id": "18","name": "Combo 18","image": "images/combo18.jpg","price": "330.00"},
       {"id": "19","name": "Combo 19","image": "images/combo19.jpg","price": "800.00"},
-      {"id": "20","name": "Combo 20","image": "images/combo20.jpg","price": "0.00"}
+      {"id": "20","name": "Combo 20","image": "images/combo20.jpg","price": "180.00"}
     ],
-    "charms":[
-      {"id": "1","name": "Charms 1","image": "images/charms1.jpg","price": "200.00"},
-      {"id": "2","name": "Charms 2","image": "images/charms2.jpg","price": "220.00"},
-    ],
+    "charms": [
+	  {"id": "1","name": "Keychains 1","image": "images/charms1.jpg","price": "100.00"},
+	  {"id": "2","name": "Keychains 2","image": "images/charms2.jpg","price": "120.00"},
+	  {"id": "3","name": "Keychains 3","image": "images/charms3.jpg","price": "130.00"},
+	  {"id": "4","name": "Keychains 4","image": "images/charms4.jpg","price": "150.00"},
+	  {"id": "5","name": "Keychains 5","image": "images/charms5.jpg","price": "150.00"},
+	  {"id": "6","name": "Keychains 6","image": "images/charms6.jpg","price": "150.00"},
+	  {"id": "7","name": "Keychains 7","image": "images/charms7.jpg","price": "180.00"},
+	  {"id": "8","name": "Keychains 8","image": "images/charms8.jpg","price": "180.00"},
+	  {"id": "9","name": "Keychains 9","image": "images/charms9.jpg","price": "180.00"},
+	  {"id": "10","name": "Keychains 10","image": "images/charms10.jpg","price": "180.00"},
+	  {"id": "11","name": "Keychains 11","image": "images/charms11.jpg","price": "180.00"},
+	  {"id": "12","name": "Keychains 12","image": "images/charms12.jpg","price": "200.00"},
+	  {"id": "13","name": "Keychains 13","image": "images/charms13.jpg","price": "200.00"},
+	  {"id": "14","name": "Keychains 14","image": "images/charms14.jpg","price": "200.00"},
+	  {"id": "15","name": "Keychains 15","image": "images/charms15.jpg","price": "200.00"},
+	  {"id": "16","name": "Keychains 16","image": "images/charms16.jpg","price": "500.00"}
+	],
     "tasbeeh": [
-      { "id": "1", "name": "Crystal Tasbeeh", "image": "images/tasbeeh1.jpg", "price": "15.00" },
-      { "id": "2", "name": "Rose Quartz Tasbeeh", "image": "images/tasbeeh2.jpg", "price": "18.00" }
-    ],
-    "keychains": [
-      { "id": "1", "name": "Floral Resin Keychain", "image": "images/key1.jpg", "price": "6.00" },
-      { "id": "2", "name": "Heart Charm Keychain", "image": "images/key2.jpg", "price": "6.00" }
-    ]
+	  {"id": "1","name": "Tasbeeh 1","image": "images/tasbeeh1.jpg","price": "180.00"},
+	  {"id": "2","name": "Tasbeeh 2","image": "images/tasbeeh2.jpg","price": "180.00"},
+	  {"id": "3","name": "Tasbeeh 3","image": "images/tasbeeh3.jpg","price": "200.00"},
+	  {"id": "4","name": "Tasbeeh 4","image": "images/tasbeeh4.jpg","price": "200.00"},
+	  {"id": "5","name": "Tasbeeh 5","image": "images/tasbeeh5.jpg","price": "200.00"},
+	  {"id": "6","name": "Tasbeeh 6","image": "images/tasbeeh6.jpg","price": "200.00"},
+	  {"id": "7","name": "Tasbeeh 7","image": "images/tasbeeh7.jpg","price": "200.00"},
+	  {"id": "8","name": "Tasbeeh 8","image": "images/tasbeeh8.jpg","price": "200.00"},
+	  {"id": "9","name": "Tasbeeh 9","image": "images/tasbeeh9.jpg","price": "200.00"},
+	  {"id": "10","name": "Tasbeeh 10","image": "images/tasbeeh10.jpg","price": "200.00"},
+	  {"id": "11","name": "Tasbeeh 11","image": "images/tasbeeh11.jpg","price": "200.00"}
+	]
   }
 };
 
@@ -193,9 +212,8 @@ const productsData = {
 document.addEventListener("DOMContentLoaded", () => {
   renderCategory("bracelets", "Bracelets");
   renderCategory("combos", "Combos");
-  renderCategory("charms", "Phone Charms");
+  renderCategory("charms", "Phone Charms & Keychains");
   renderCategory("tasbeeh", "Tasbeeh");
-  renderCategory("keychains", "Keychains");
 });
 
 document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
