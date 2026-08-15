@@ -49,10 +49,12 @@ function renderCategory(categoryId, categoryTitle) {
       <div class="card product-card h-100 border-0 shadow-sm">
         <div class="product-img-wrapper">
           <img src="${product.image}" class="card-img-top" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(product.name)}'">
+          <!--<button class="btn btn-wishlist" aria-label="Add to Wishlist">♥</button>-->
         </div>
         <div class="card-body d-flex flex-column text-center">
           <h5 class="card-title text-truncate">${product.name}</h5>
           <p class="card-text price-tag mt-auto">$${product.price}</p>
+          <!--<button class="btn btn-girly w-100 mt-2">Add to Cart</button>-->
         </div>
       </div>
     </div>
