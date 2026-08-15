@@ -17,23 +17,27 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand" href="#">Khadija Wristwear ✨</a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto text-center">
-          <li class="nav-item"><a class="nav-link" href="#bracelets">Bracelets</a></li>
-          <li class="nav-item"><a class="nav-link" href="#combos">Combos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#charms">Phone Charms</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tasbeeh">Tasbeeh</a></li>
-          <li class="nav-item"><a class="nav-link" href="#keychains">Keychains</a></li>
-        </ul>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">Khadija Wristwear ✨</a>
+
+    <!-- 1. Ensure data-bs-target matches the ID below (#navbarNav) -->
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- 2. Ensure id="navbarNav" is present on this wrapper -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item"><a class="nav-link" href="#bracelets">Bracelets</a></li>
+        <li class="nav-item"><a class="nav-link" href="#combos">Combos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#charms">Phone Charms</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tasbeeh">Tasbeeh</a></li>
+        <li class="nav-item"><a class="nav-link" href="#keychains">Keychains</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <!-- Hero Banner -->
   <header class="container my-4">
