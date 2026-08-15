@@ -11,10 +11,6 @@ const productsData = {
       { "id": "7", "name": "Brown Star Bracelet", "image": "images/brac2.jpg", "price": "12.00" },
     ],
     "combos": [
-      { "id": "1", "name": "Blue Combo Pack", "image": "images/combo1.jpg", "price": "24.00" },
-      { "id": "2", "name": "Red Combo Pack", "image": "images/combo2.jpg", "price": "24.00" }
-    ],
-    "charms":[
       {"id": "1","name": "Combo 1","image": "images/combo1.jpg","price": "200.00"},
       {"id": "2","name": "Combo 2","image": "images/combo2.jpg","price": "220.00"},
       {"id": "3","name": "Combo 3","image": "images/combo3.jpg","price": "220.00"},
@@ -35,6 +31,10 @@ const productsData = {
       {"id": "18","name": "Combo 18","image": "images/combo18.jpg","price": "330.00"},
       {"id": "19","name": "Combo 19","image": "images/combo19.jpg","price": "800.00"},
       {"id": "20","name": "Combo 20","image": "images/combo20.jpg","price": "0.00"}
+    ],
+    "charms":[
+      {"id": "1","name": "Charms 1","image": "images/charms1.jpg","price": "200.00"},
+      {"id": "2","name": "Charms 2","image": "images/charms2.jpg","price": "220.00"},
     ],
     "tasbeeh": [
       { "id": "1", "name": "Crystal Tasbeeh", "image": "images/tasbeeh1.jpg", "price": "15.00" },
