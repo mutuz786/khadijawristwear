@@ -14,9 +14,27 @@ const productsData = {
       { "id": "1", "name": "Blue Combo Pack", "image": "images/combo1.jpg", "price": "24.00" },
       { "id": "2", "name": "Red Combo Pack", "image": "images/combo2.jpg", "price": "24.00" }
     ],
-    "charms": [
-      { "id": "1", "name": "Pearl Phone Charm", "image": "images/charm1.jpg", "price": "8.00" },
-      { "id": "2", "name": "Butterfly Phone Charm", "image": "images/charm2.jpg", "price": "8.00" }
+    "charms":[
+      {"id": "1","name": "Combo 1","image": "images/combo1.jpg","price": "200.00"},
+      {"id": "2","name": "Combo 2","image": "images/combo2.jpg","price": "220.00"},
+      {"id": "3","name": "Combo 3","image": "images/combo3.jpg","price": "220.00"},
+      {"id": "4","name": "Combo 4","image": "images/combo4.jpg","price": "230.00"},
+      {"id": "5","name": "Combo 5","image": "images/combo5.jpg","price": "250.00"},
+      {"id": "6","name": "Combo 6","image": "images/combo6.jpg","price": "250.00"},
+      {"id": "7","name": "Combo 7","image": "images/combo7.jpg","price": "250.00"},
+      {"id": "8","name": "Combo 8","image": "images/combo8.jpg","price": "250.00"},
+      {"id": "9","name": "Combo 9","image": "images/combo9.jpg","price": "250.00"},
+      {"id": "10","name": "Combo 10","image": "images/combo10.jpg","price": "250.00"},
+      {"id": "11","name": "Combo 11","image": "images/combo11.jpg","price": "250.00"},
+      {"id": "12","name": "Combo 12","image": "images/combo12.jpg","price": "280.00"},
+      {"id": "13","name": "Combo 13","image": "images/combo13.jpg","price": "300.00"},
+      {"id": "14","name": "Combo 14","image": "images/combo14.jpg","price": "300.00"},
+      {"id": "15","name": "Combo 15","image": "images/combo15.jpg","price": "300.00"},
+      {"id": "16","name": "Combo 16","image": "images/combo16.jpg","price": "300.00"},
+      {"id": "17","name": "Combo 17","image": "images/combo17.jpg","price": "300.00"},
+      {"id": "18","name": "Combo 18","image": "images/combo18.jpg","price": "330.00"},
+      {"id": "19","name": "Combo 19","image": "images/combo19.jpg","price": "800.00"},
+      {"id": "20","name": "Combo 20","image": "images/combo20.jpg","price": "0.00"}
     ],
     "tasbeeh": [
       { "id": "1", "name": "Crystal Tasbeeh", "image": "images/tasbeeh1.jpg", "price": "15.00" },
