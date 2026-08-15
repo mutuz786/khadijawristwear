@@ -71,20 +71,32 @@ function renderCategory(categoryId, categoryTitle) {
   if (!container) return;
 
   const items = productsData.products[categoryId] || [];
-  
-  container.innerHTML = items.map(product => `
-    <div class="col-6 col-md-4 col-lg-3">
-      <div class="card product-card h-100 border-0 shadow-sm">
-        <div class="product-img-wrapper">
-          <img src="${product.image}" class="card-img-top" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(product.name)}'">
-          <!--<button class="btn btn-wishlist" aria-label="Add to Wishlist">♥</button>-->
-        </div>
-        <div class="card-body d-flex flex-column text-center">
-          <h5 class="card-title text-truncate">${product.name}</h5>
-          <p class="card-text price-tag mt-auto">$${product.price}</p>
-          <!--<button class="btn btn-girly w-100 mt-2">Add to Cart</button>-->
+
+  const targetPhoneNumber = "917021511920"; // Country code + phone number
+
+  container.innerHTML = items.map(product => {
+    // Construct absolute URL for the image so it can be previewed/shared clearly
+    const absoluteImageUrl = new URL(product.image, window.location.href).href;
+
+    // Custom WhatsApp pre-filled message
+    const message = `Hi! I am interested in your product: ${product.name} (Price: $${product.price}).\nImage: ${absoluteImageUrl}`;
+    const whatsappUrl = `https://wa.me/${targetPhoneNumber}?text=${encodeURIComponent(message)}`;
+
+    return `
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card product-card h-100 border-0 shadow-sm">
+          <div class="product-img-wrapper">
+            <img src="${product.image}" class="card-img-top" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(product.name)}'">
+          </div>
+          <div class="card-body d-flex flex-column text-center">
+            <h5 class="card-title text-truncate">${product.name}</h5>
+            <p class="card-text price-tag mt-auto">$${product.price}</p>
+            <a href="${whatsappUrl}" target="_blank" class="btn btn-girly w-100 mt-2 d-flex align-items-center justify-content-center gap-1">
+              <span>💬</span>order
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
