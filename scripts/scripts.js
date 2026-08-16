@@ -234,7 +234,7 @@ function renderCategory(categoryId, categoryTitle) {
   container.innerHTML = items.map(product => `
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card product-card border-0 shadow-sm" onclick="toggleItemBlur(event, this)">
-        <div class="product-img-wrapper">
+        <div>
           <img src="${product.image}" class="card-img-top" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(product.name)}'">
           <div class="view-overlay">
             <button class="btn-view-icon" onclick="openProductModal(event, '${product.name}', '$${product.price}', '${product.image}')" title="View Details">
