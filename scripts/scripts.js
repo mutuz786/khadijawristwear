@@ -260,12 +260,10 @@ function toggleItemBlur(event, cardElement) {
   
   const isCurrentlyActive = cardElement.classList.contains('active-blur');
   
-  // Close any active blur on other cards
   document.querySelectorAll('.product-card.active-blur').forEach(card => {
     card.classList.remove('active-blur');
   });
 
-  // Toggle active blur on clicked card
   if (!isCurrentlyActive) {
     cardElement.classList.add('active-blur');
   }
@@ -273,9 +271,8 @@ function toggleItemBlur(event, cardElement) {
 
 // Open popup modal when view icon is clicked
 function openProductModal(event, name, price, imagePath) {
-  event.stopPropagation(); // Prevent card toggle click event
+  event.stopPropagation();
 
-  // Clear any active blur states
   document.querySelectorAll('.product-card.active-blur').forEach(card => {
     card.classList.remove('active-blur');
   });
@@ -296,32 +293,14 @@ function openProductModal(event, name, price, imagePath) {
   productModal.show();
 }
 
-// WhatsApp Order & Image Share Function
-async function orderProduct(event, name, price, imagePath) {
+// WhatsApp Order Direct Messaging
+function orderProduct(event, name, price, imagePath) {
   if (event) event.stopPropagation();
 
   const phoneNumber = "917021511920";
-  const messageText = `I am interested in your product: ${name} (${price}).`;
+  const absoluteImageUrl = new URL(imagePath, window.location.href).href;
+  const messageText = `I am interested in your product: ${name} (${price}).\nImage: ${absoluteImageUrl}`;
 
-  try {
-    const response = await fetch(imagePath);
-    const blob = await response.blob();
-    const file = new File([blob], `${name.replace(/\s+/g, '_')}.jpg`, { type: blob.type });
-
-    if (navigator.canShare && navigator.canShare({ files: [file] })) {
-      await navigator.share({
-        title: name,
-        text: messageText,
-        files: [file]
-      });
-    } else {
-      const absoluteImageUrl = new URL(imagePath, window.location.href).href;
-      const fallbackUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageText + '\nImage: ' + absoluteImageUrl)}`;
-      window.open(fallbackUrl, '_blank');
-    }
-  } catch (err) {
-    const absoluteImageUrl = new URL(imagePath, window.location.href).href;
-    const fallbackUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageText + '\nImage: ' + absoluteImageUrl)}`;
-    window.open(fallbackUrl, '_blank');
-  }
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageText)}`;
+  window.open(whatsappUrl, '_blank');
 }
