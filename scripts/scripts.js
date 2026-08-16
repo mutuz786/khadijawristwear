@@ -216,12 +216,22 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCategory("tasbeeh", "Tasbeeh");
 });
 
-document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    const navbarCollapse = document.getElementById('navbarNav');
-    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-      const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
-      bsCollapse.hide();
+// Toggle 'collapse' class on 'navbarNav' when clicking 'navbar-toggler'
+const togglerButton = document.querySelector('.navbar-toggler');
+togglerButton.addEventListener('click', () => {
+  const navbarNav = document.getElementById('navbarNav');
+  if (navbarNav) {
+    navbarNav.classList.toggle('collapse');
+  }
+});
+
+// Add 'collapse' class to 'navbarNav' when any 'nav-item' element is clicked
+const navItems = document.querySelectorAll('.nav-item');
+navItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const navbarNav = document.getElementById('navbarNav');
+    if (navbarNav && !navbarNav.classList.contains('collapse')) {
+      navbarNav.classList.add('collapse');
     }
   });
 });
@@ -232,31 +242,52 @@ function renderCategory(categoryId, categoryTitle) {
 
   const items = productsData.products[categoryId] || [];
 
-  const targetPhoneNumber = "917021511920"; // Country code + phone number
-
-  container.innerHTML = items.map(product => {
-    // Construct absolute URL for the image so it can be previewed/shared clearly
-    const absoluteImageUrl = new URL(product.image, window.location.href).href;
-
-    // Custom WhatsApp pre-filled message
-    const message = `Hi! I am interested in your product: ${product.name} (Price: $${product.price}).\nImage: ${absoluteImageUrl}`;
-    const whatsappUrl = `https://wa.me/${targetPhoneNumber}?text=${encodeURIComponent(message)}`;
-
-    return `
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="card product-card border-0 shadow-sm">
-          <div>
-            <img src="${product.image}" class="card-img-top" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(product.name)}'">
-          </div>
-          <div class="card-body d-flex flex-column text-center">
-            <h5 class="card-title text-truncate">${product.name}</h5>
-            <p class="card-text price-tag mt-auto">$${product.price}</p>
-            <a href="${whatsappUrl}" target="_blank" class="btn btn-girly w-100 mt-2 d-flex align-items-center justify-content-center gap-1">
-              <span>💬</span>order
-            </a>
-          </div>
+  container.innerHTML = items.map(product => `
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card product-card border-0 shadow-sm">
+        <div>
+          <img src="${product.image}" class="card-img-top" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(product.name)}'">
+        </div>
+        <div class="card-body d-flex flex-column text-center">
+          <h5 class="card-title text-truncate">${product.name}</h5>
+          <p class="card-text price-tag mt-auto">$${product.price}</p>
+          <button onclick="shareProduct('${product.name}', '$${product.price}', '${product.image}')" class="btn btn-girly w-100 mt-2 d-flex align-items-center justify-content-center gap-1">
+            order
+          </button>
         </div>
       </div>
-    `;
-  }).join('');
+    </div>
+  `).join('');
+}
+
+// Fix 3: Share actual image file + text via Web Share API
+async function shareProduct(name, price, imagePath) {
+  const textMessage = `I am interested in your product: ${name} (${price}).`;
+  const targetPhoneNumber = "917021511920";
+
+  try {
+    // Fetch image and convert to File object
+    const response = await fetch(imagePath);
+    const blob = await response.blob();
+    const file = new File([blob], `${name.replace(/\s+/g, '_')}.jpg`, { type: blob.type });
+
+    // Check if device supports sharing image files
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({
+        title: name,
+        text: textMessage,
+        files: [file]
+      });
+    } else {
+      // Fallback for desktop/unsupported browsers
+      const absoluteImageUrl = new URL(imagePath, window.location.href).href;
+      const fallbackUrl = `https://wa.me/${targetPhoneNumber}?text=${encodeURIComponent(textMessage + '\nImage: ' + absoluteImageUrl)}`;
+      window.open(fallbackUrl, '_blank');
+    }
+  } catch (err) {
+    // Direct link fallback on error
+    const absoluteImageUrl = new URL(imagePath, window.location.href).href;
+    const fallbackUrl = `https://wa.me/${targetPhoneNumber}?text=${encodeURIComponent(textMessage + '\nImage: ' + absoluteImageUrl)}`;
+    window.open(fallbackUrl, '_blank');
+  }
 }
