@@ -244,8 +244,8 @@ function renderCategory(categoryId, categoryTitle) {
 
     return `
       <div class="col-6 col-md-4 col-lg-3">
-        <div class="card product-card h-100 border-0 shadow-sm">
-          <div class="product-img-wrapper">
+        <div class="card product-card border-0 shadow-sm">
+          <div>
             <img src="${product.image}" class="card-img-top" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(product.name)}'">
           </div>
           <div class="card-body d-flex flex-column text-center">

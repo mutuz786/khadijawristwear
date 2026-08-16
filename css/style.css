@@ -149,7 +149,7 @@ footer {
 /* Ensure flex items do not shrink and maintain proper width */
 .horizontal-scroll-container > [class*="col-"] {
   flex: 0 0 auto !important;
-  width: 260px; /* Fixed width per card for consistent horizontal alignment */
+  width: min-content; /* Fixed width per card for consistent horizontal alignment */
 }
 
 /* Custom Scrollbar Styling */
