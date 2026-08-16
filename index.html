@@ -8,6 +8,9 @@
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   
@@ -17,26 +20,24 @@
 <body>
 
   <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand" href="#">Khadija Wristwear ✨</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">Khadija Wristwear ✨</a>
 
-    <!-- 1. Ensure data-bs-target matches the ID below (#navbarNav) -->
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- 2. Ensure id="navbarNav" is present on this wrapper -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto text-center">
-        <li class="nav-item"><a class="nav-link" href="#bracelets">Bracelets</a></li>
-        <li class="nav-item"><a class="nav-link" href="#combos">Combos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#charms">Phone Charms & Keychains</a></li>
-        <li class="nav-item"><a class="nav-link" href="#tasbeeh">Tasbeeh</a></li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="#bracelets" data-bs-toggle="collapse" data-bs-target="#navbarNav">Bracelets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#combos" data-bs-toggle="collapse" data-bs-target="#navbarNav">Combos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#charms" data-bs-toggle="collapse" data-bs-target="#navbarNav">Phone Charms & Keychains</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tasbeeh" data-bs-toggle="collapse" data-bs-target="#navbarNav">Tasbeeh</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- Hero Banner -->
   <header class="container my-4">
@@ -83,6 +84,25 @@
     </section>
   </main>
 
+  <!-- Product View Modal -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center pt-0 px-4 pb-4">
+          <img id="modalProductImg" src="" class="img-fluid rounded-3 mb-3 shadow-sm" style="max-height: 300px; object-fit: cover;" alt="Product Image">
+          <h4 id="modalProductName" class="modal-title font-weight-bold mb-2"></h4>
+          <p id="modalProductPrice" class="price-tag fs-4 mb-3"></p>
+          <button id="modalOrderBtn" class="btn btn-girly w-100 py-2 fs-6">
+            <i class="bi bi-whatsapp me-1"></i> Order via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="py-4 text-center border-top mt-5">
     <div class="container">
@@ -93,7 +113,7 @@
   </footer>
 
   <!-- Bootstrap 5 JS Bundle -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  
   
   <!-- Custom Script -->
   <script src="scripts/scripts.js"></script>

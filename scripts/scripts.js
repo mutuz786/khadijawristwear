@@ -214,24 +214,13 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCategory("combos", "Combos");
   renderCategory("charms", "Phone Charms & Keychains");
   renderCategory("tasbeeh", "Tasbeeh");
-});
 
-// Toggle 'collapse' class on 'navbarNav' when clicking 'navbar-toggler'
-const togglerButton = document.querySelector('.navbar-toggler');
-togglerButton.addEventListener('click', () => {
-  const navbarNav = document.getElementById('navbarNav');
-  if (navbarNav) {
-    navbarNav.classList.toggle('collapse');
-  }
-});
-
-// Add 'collapse' class to 'navbarNav' when any 'nav-item' element is clicked
-const navItems = document.querySelectorAll('.nav-item');
-navItems.forEach(item => {
-  item.addEventListener('click', () => {
-    const navbarNav = document.getElementById('navbarNav');
-    if (navbarNav && !navbarNav.classList.contains('collapse')) {
-      navbarNav.classList.add('collapse');
+  // Remove blur & view icon when clicking anywhere outside an active product card
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".product-card")) {
+      document.querySelectorAll(".product-card.active-blur").forEach(card => {
+        card.classList.remove("active-blur");
+      });
     }
   });
 });
@@ -244,15 +233,20 @@ function renderCategory(categoryId, categoryTitle) {
 
   container.innerHTML = items.map(product => `
     <div class="col-6 col-md-4 col-lg-3">
-      <div class="card product-card border-0 shadow-sm">
-        <div>
+      <div class="card product-card border-0 shadow-sm" onclick="toggleItemBlur(event, this)">
+        <div class="product-img-wrapper">
           <img src="${product.image}" class="card-img-top" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(product.name)}'">
+          <div class="view-overlay">
+            <button class="btn-view-icon" onclick="openProductModal(event, '${product.name}', '$${product.price}', '${product.image}')" title="View Details">
+              <i class="bi bi-eye-fill"></i>
+            </button>
+          </div>
         </div>
         <div class="card-body d-flex flex-column text-center">
           <h5 class="card-title text-truncate">${product.name}</h5>
           <p class="card-text price-tag mt-auto">$${product.price}</p>
-          <button onclick="shareProduct('${product.name}', '$${product.price}', '${product.image}')" class="btn btn-girly w-100 mt-2 d-flex align-items-center justify-content-center gap-1">
-            order
+          <button onclick="orderProduct(event, '${product.name}', '$${product.price}', '${product.image}')" class="btn btn-girly w-100 mt-2 d-flex align-items-center justify-content-center gap-1">
+            <i class="bi bi-whatsapp"></i> Order
           </button>
         </div>
       </div>
@@ -260,34 +254,74 @@ function renderCategory(categoryId, categoryTitle) {
   `).join('');
 }
 
-// Fix 3: Share actual image file + text via Web Share API
-async function shareProduct(name, price, imagePath) {
-  const textMessage = `I am interested in your product: ${name} (${price}).`;
-  const targetPhoneNumber = "917021511920";
+// Toggle blur on clicking an item and remove blur from any other open items
+function toggleItemBlur(event, cardElement) {
+  event.stopPropagation();
+  
+  const isCurrentlyActive = cardElement.classList.contains('active-blur');
+  
+  // Close any active blur on other cards
+  document.querySelectorAll('.product-card.active-blur').forEach(card => {
+    card.classList.remove('active-blur');
+  });
+
+  // Toggle active blur on clicked card
+  if (!isCurrentlyActive) {
+    cardElement.classList.add('active-blur');
+  }
+}
+
+// Open popup modal when view icon is clicked
+function openProductModal(event, name, price, imagePath) {
+  event.stopPropagation(); // Prevent card toggle click event
+
+  // Clear any active blur states
+  document.querySelectorAll('.product-card.active-blur').forEach(card => {
+    card.classList.remove('active-blur');
+  });
+
+  document.getElementById('modalProductName').textContent = name;
+  document.getElementById('modalProductPrice').textContent = price;
+  
+  const modalImg = document.getElementById('modalProductImg');
+  modalImg.src = imagePath;
+  modalImg.onerror = function() {
+    this.src = `https://via.placeholder.com/300x300?text=${encodeURIComponent(name)}`;
+  };
+
+  const modalOrderBtn = document.getElementById('modalOrderBtn');
+  modalOrderBtn.onclick = (e) => orderProduct(e, name, price, imagePath);
+
+  const productModal = new bootstrap.Modal(document.getElementById('productModal'));
+  productModal.show();
+}
+
+// WhatsApp Order & Image Share Function
+async function orderProduct(event, name, price, imagePath) {
+  if (event) event.stopPropagation();
+
+  const phoneNumber = "917021511920";
+  const messageText = `I am interested in your product: ${name} (${price}).`;
 
   try {
-    // Fetch image and convert to File object
     const response = await fetch(imagePath);
     const blob = await response.blob();
     const file = new File([blob], `${name.replace(/\s+/g, '_')}.jpg`, { type: blob.type });
 
-    // Check if device supports sharing image files
     if (navigator.canShare && navigator.canShare({ files: [file] })) {
       await navigator.share({
         title: name,
-        text: textMessage,
+        text: messageText,
         files: [file]
       });
     } else {
-      // Fallback for desktop/unsupported browsers
       const absoluteImageUrl = new URL(imagePath, window.location.href).href;
-      const fallbackUrl = `https://wa.me/${targetPhoneNumber}?text=${encodeURIComponent(textMessage + '\nImage: ' + absoluteImageUrl)}`;
+      const fallbackUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageText + '\nImage: ' + absoluteImageUrl)}`;
       window.open(fallbackUrl, '_blank');
     }
   } catch (err) {
-    // Direct link fallback on error
     const absoluteImageUrl = new URL(imagePath, window.location.href).href;
-    const fallbackUrl = `https://wa.me/${targetPhoneNumber}?text=${encodeURIComponent(textMessage + '\nImage: ' + absoluteImageUrl)}`;
+    const fallbackUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageText + '\nImage: ' + absoluteImageUrl)}`;
     window.open(fallbackUrl, '_blank');
   }
 }
